@@ -4,10 +4,7 @@ namespace csharp
 {
     public class ItemMapper
     {
-        private const string AGED_BRIE = AgedBrie.NAME;
-        private const string SULFURAS = Sulfuras.NAME;
-        private const string BACKSTAGE_PASSES = BackstagePasses.NAME;
-        private const string GENERIC_ITEM = "default";
+        private const string GENERIC_ITEM_KEY = "default";
 
         private readonly Dictionary<string, IAdvanceableDay> _nameTypeMapping;
 
@@ -17,11 +14,12 @@ namespace csharp
         {
             _nameTypeMapping = new Dictionary<string, IAdvanceableDay>()
             {
-                {AGED_BRIE, new AgedBrie() },
-                {SULFURAS, new Sulfuras() },
-                {BACKSTAGE_PASSES, new BackstagePasses() },
+                { AgedBrie.NAME, new AgedBrie() },
+                { Sulfuras.NAME, new Sulfuras() },
+                { BackstagePasses.NAME, new BackstagePasses() },
+                { Conjured.NAME, new Conjured() },
 
-                {GENERIC_ITEM, new GenericItem() }
+                { GENERIC_ITEM_KEY, new GenericItem() }
             };
         }
 
@@ -46,7 +44,7 @@ namespace csharp
             if (_nameTypeMapping.TryGetValue(itemName, out IAdvanceableDay advanceableDayItem))
                 return advanceableDayItem;
 
-            return _nameTypeMapping[GENERIC_ITEM];
+            return _nameTypeMapping[GENERIC_ITEM_KEY];
         }
     }
 }

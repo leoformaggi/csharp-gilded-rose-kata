@@ -6,7 +6,7 @@ namespace csharp.Tests
     [TestFixture]
     public class ConjuredItemsTests
     {
-        [Ignore("Conjured items are not supported yet")]
+        [Test]
         public void Conjured_items_quality_should_decrease_by_2_everyday_when_SellIn_is_positive()
         {
             int sellIn = 5;
@@ -28,7 +28,7 @@ namespace csharp.Tests
             }
         }
 
-        [Ignore("Conjured items are not supported yet")]
+        [Test]
         public void Conjured_items_quality_should_decrease_by_4_everyday_when_SellIn_is_negative()
         {
             int sellIn = 0;

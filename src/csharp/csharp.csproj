@@ -52,6 +52,7 @@
     <Compile Include="ItemMapper.cs" />
     <Compile Include="Items\AgedBrie.cs" />
     <Compile Include="Items\BackstagePasses.cs" />
+    <Compile Include="Items\Conjured.cs" />
     <Compile Include="Items\GenericItem.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="IAdvanceableDay.cs" />
