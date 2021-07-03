@@ -1,25 +1,18 @@
 ﻿namespace csharp
 {
-    public class AgedBrie : Item, IAdvanceableDayItem
+    public class AgedBrie : IAdvanceableDay
     {
         public const string NAME = "Aged Brie";
 
-        public AgedBrie(int sellIn, int quality)
+        public void AdvanceDay(Item item)
         {
-            Name = NAME;
-            SellIn = sellIn;
-            Quality = quality;
-        }
+            item.SellIn--;
 
-        public void AdvanceDay()
-        {
-            SellIn--;
+            if (item.Quality < 50)
+                item.Quality++;
 
-            if (Quality < 50)
-                Quality++;
-
-            if (SellIn < 0 && Quality < 50)
-                Quality++;
+            if (item.SellIn < 0 && item.Quality < 50)
+                item.Quality++;
         }
     }
 }

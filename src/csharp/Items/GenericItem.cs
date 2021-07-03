@@ -1,26 +1,19 @@
 ﻿namespace csharp
 {
-    public class GenericItem : Item, IAdvanceableDayItem
+    public class GenericItem : IAdvanceableDay
     {
-        public GenericItem(string name, int sellIn, int quality)
+        public void AdvanceDay(Item item)
         {
-            Name = name;
-            SellIn = sellIn;
-            Quality = quality;
-        }
+            item.SellIn--;
 
-        public void AdvanceDay()
-        {
-            SellIn--;
-
-            if (Quality == 0)
+            if (item.Quality == 0)
                 return;
 
-            if (Quality > 0)
-                Quality--;
+            if (item.Quality > 0)
+                item.Quality--;
 
-            if (SellIn < 0 && Quality > 0)
-                Quality--;
+            if (item.SellIn < 0 && item.Quality > 0)
+                item.Quality--;
         }
     }
 }

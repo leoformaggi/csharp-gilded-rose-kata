@@ -1,7 +1,7 @@
 ﻿namespace csharp
 {
-    public interface IAdvanceableDayItem
+    public interface IAdvanceableDay
     {
-        void AdvanceDay();
+        void AdvanceDay(Item item);
     }
 }

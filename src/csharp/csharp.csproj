@@ -49,11 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemMapper.cs" />
     <Compile Include="Items\AgedBrie.cs" />
     <Compile Include="Items\BackstagePasses.cs" />
     <Compile Include="Items\GenericItem.cs" />
     <Compile Include="GildedRose.cs" />
-    <Compile Include="IAdvanceableDayItem.cs" />
+    <Compile Include="IAdvanceableDay.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

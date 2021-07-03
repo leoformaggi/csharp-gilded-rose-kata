@@ -1,33 +1,26 @@
 ﻿namespace csharp
 {
-    public class BackstagePasses : Item, IAdvanceableDayItem
+    public class BackstagePasses : IAdvanceableDay
     {
         public const string NAME = "Backstage passes to a TAFKAL80ETC concert";
 
-        public BackstagePasses(int sellIn, int quality)
+        public void AdvanceDay(Item item)
         {
-            Name = NAME;
-            SellIn = sellIn;
-            Quality = quality;
-        }
-
-        public void AdvanceDay()
-        {
-            if (Quality < 50)
+            if (item.Quality < 50)
             {
-                Quality++;
+                item.Quality++;
 
-                if (SellIn < 11 && Quality < 50)
-                    Quality++;
+                if (item.SellIn < 11 && item.Quality < 50)
+                    item.Quality++;
 
-                if (SellIn < 6 && Quality < 50)
-                    Quality++;
+                if (item.SellIn < 6 && item.Quality < 50)
+                    item.Quality++;
             }
 
-            SellIn--;
+            item.SellIn--;
 
-            if (SellIn < 0)
-                Quality = 0;
+            if (item.SellIn < 0)
+                item.Quality = 0;
         }
     }
 }
