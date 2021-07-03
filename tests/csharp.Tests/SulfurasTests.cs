@@ -24,5 +24,4 @@ namespace csharp.Tests
             Assert.AreEqual(10, sulfuras.SellIn);
         }
     }
-
 }

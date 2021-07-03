@@ -84,6 +84,18 @@ namespace csharp.Tests
             Assert.AreEqual(-1, passes.SellIn);
             Assert.AreEqual(0, passes.Quality);
         }
-    }
 
+        [Test]
+        public void Backstage_passes_quality_should_not_be_higher_than_50()
+        {
+            var passes = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 49 };
+            var items = new List<Item> { passes };
+
+            var app = new GildedRose(items);
+            for (int i = 0; i < 3; i++)
+                app.UpdateQuality();
+
+            Assert.AreEqual(50, passes.Quality);
+        }
+    }
 }

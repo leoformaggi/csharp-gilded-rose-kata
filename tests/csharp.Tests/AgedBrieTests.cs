@@ -23,6 +23,20 @@ namespace csharp.Tests
                     Assert.AreEqual(i, agedBrie.Quality);
             }
         }
+
+        [Test]
+        public void Aged_brie_quality_should_not_be_higher_than_50_specialized()
+        {
+            Item agedBrie = new Item { Name = "Aged Brie", SellIn = 10, Quality = 49 };
+            var items = new List<Item> { agedBrie };
+
+            var app = new GildedRose(items);
+
+            for (int i = 0; i < 3; i++)
+                app.UpdateQuality();
+
+            Assert.AreEqual(50, agedBrie.Quality);
+        }
     }
 
 }
