@@ -23,6 +23,32 @@ namespace csharp.Tests
                     Assert.AreEqual(i, agedBrie.Quality);
             }
         }
+
+        [Test]
+        public void Aged_brie_quality_should_raise_everyday_specialized()
+        {
+            var agedBrie = new AgedBrie(10, 0);
+
+            Assert.AreEqual(0, agedBrie.Quality);
+            for (int i = 1; i <= 10; i++)
+            {
+                agedBrie.AdvanceDay();
+
+                if (agedBrie.SellIn > 0)
+                    Assert.AreEqual(i, agedBrie.Quality);
+            }
+        }
+
+        [Test]
+        public void Aged_brie_quality_should_not_be_higher_than_50_specialized()
+        {
+            var item = new AgedBrie(10, 49);
+
+            for (int i = 0; i < 3; i++)
+                item.AdvanceDay();
+
+            Assert.AreEqual(50, item.Quality);
+        }
     }
 
 }

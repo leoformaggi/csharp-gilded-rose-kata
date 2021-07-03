@@ -23,6 +23,21 @@ namespace csharp.Tests
             Assert.AreEqual(80, sulfuras.Quality);
             Assert.AreEqual(10, sulfuras.SellIn);
         }
+
+        [Test]
+        public void Sulfuras_quality_and_SellIn_should_never_change_specialized()
+        {
+            var sulfuras = new Sulfuras();
+
+            Assert.AreEqual(80, sulfuras.Quality);
+            Assert.AreEqual(10, sulfuras.SellIn);
+
+            for (int i = 0; i < 3; i++)
+                sulfuras.AdvanceDay();
+
+            Assert.AreEqual(80, sulfuras.Quality);
+            Assert.AreEqual(10, sulfuras.SellIn);
+        }
     }
 
 }

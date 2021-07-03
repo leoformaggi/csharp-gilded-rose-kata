@@ -58,7 +58,6 @@
     <Compile Include="BackstagePassesTests.cs" />
     <Compile Include="ConjuredItemsTests.cs" />
     <Compile Include="GenericItemsTests.cs" />
-    <Compile Include="GildedRoseTest.cs" />
     <Compile Include="SulfurasTests.cs" />
   </ItemGroup>
   <ItemGroup>
