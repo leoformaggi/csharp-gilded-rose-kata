@@ -1,9 +1,8 @@
 ﻿namespace csharp
 {
-    public class BackstagePassesItemRules : IAdvanceableDay
+    [SpecializedItem("Backstage passes to a TAFKAL80ETC concert")]
+    public class BackstagePassesItem : IAdvanceableDay
     {
-        public const string NAME = "Backstage passes to a TAFKAL80ETC concert";
-
         public void AdvanceDay(Item item)
         {
             if (item.Quality < 50)

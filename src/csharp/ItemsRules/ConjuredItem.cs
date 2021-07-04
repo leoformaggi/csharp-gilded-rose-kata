@@ -1,9 +1,8 @@
 ﻿namespace csharp
 {
-    public class ConjuredItemRules : IAdvanceableDay
+    [SpecializedItem("Conjured Mana Cake")]
+    public class ConjuredItem : IAdvanceableDay
     {
-        public const string NAME = "Conjured Mana Cake";
-
         public void AdvanceDay(Item item)
         {
             item.SellIn--;
