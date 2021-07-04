@@ -1,9 +1,8 @@
 ﻿namespace csharp
 {
-    public class AgedBrieItemsRules : IAdvanceableDay
+    [SpecializedItem("Aged Brie")]
+    public class AgedBrieItem : IAdvanceableDay
     {
-        public const string NAME = "Aged Brie";
-
         public void AdvanceDay(Item item)
         {
             item.SellIn--;

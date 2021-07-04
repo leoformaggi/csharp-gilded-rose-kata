@@ -1,6 +1,6 @@
 ﻿namespace csharp
 {
-    public class GenericItemRules : IAdvanceableDay
+    public class GenericItem : IAdvanceableDay
     {
         public void AdvanceDay(Item item)
         {
