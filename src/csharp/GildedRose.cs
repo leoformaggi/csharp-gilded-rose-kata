@@ -18,7 +18,7 @@ namespace csharp
         {
             foreach (Item item in Items)
             {
-                IAdvanceableDay customizedType = _itemMapper.GetCustomizedType(item);
+                IAdvanceableDay customizedType = _itemMapper.GetMappedTypeFor(item);
                 customizedType.AdvanceDay(item);
             }
         }

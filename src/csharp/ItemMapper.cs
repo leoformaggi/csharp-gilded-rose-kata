@@ -12,17 +12,6 @@ namespace csharp
         private readonly Dictionary<string, IAdvanceableDay> _nameTypeMapping;
 
         private static ItemMapper _instance;
-
-        private ItemMapper()
-        {
-            _nameTypeMapping = new Dictionary<string, IAdvanceableDay>()
-            {
-                { GENERIC_ITEM_KEY, new GenericItem() }
-            };
-
-            LoadDictionaryWithReflection();
-        }
-
         public static ItemMapper Instance
         {
             get
@@ -34,14 +23,19 @@ namespace csharp
             }
         }
 
-        public IAdvanceableDay GetCustomizedType(Item item)
+        private ItemMapper()
         {
-            return GetItemType(item.Name);
+            _nameTypeMapping = new Dictionary<string, IAdvanceableDay>()
+            {
+                { GENERIC_ITEM_KEY, new GenericItem() }
+            };
+
+            LoadDictionaryWithReflection();
         }
 
-        private IAdvanceableDay GetItemType(string itemName)
+        public IAdvanceableDay GetMappedTypeFor(Item item)
         {
-            if (_nameTypeMapping.TryGetValue(itemName, out IAdvanceableDay advanceableDayItem))
+            if (_nameTypeMapping.TryGetValue(item.Name, out IAdvanceableDay advanceableDayItem))
                 return advanceableDayItem;
 
             return _nameTypeMapping[GENERIC_ITEM_KEY];
@@ -56,11 +50,10 @@ namespace csharp
             foreach (Type type in specializedItemsTypes)
             {
                 var itemName = type.GetCustomAttribute<SpecializedItemAttribute>().ItemName;
-                IAdvanceableDay instance = Activator.CreateInstance(type) as IAdvanceableDay;
 
                 /// If the class does not implement <see cref="IAdvanceableDay"/> it won't be 
                 /// added to the mapping and will be returned as GenericItem
-                if (instance != null)
+                if (Activator.CreateInstance(type) is IAdvanceableDay instance)
                     _nameTypeMapping.Add(itemName, instance);
             }
         }
