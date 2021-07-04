@@ -14,12 +14,12 @@ namespace csharp
         {
             _nameTypeMapping = new Dictionary<string, IAdvanceableDay>()
             {
-                { AgedBrie.NAME, new AgedBrie() },
-                { Sulfuras.NAME, new Sulfuras() },
-                { BackstagePasses.NAME, new BackstagePasses() },
-                { Conjured.NAME, new Conjured() },
+                { AgedBrieItemsRules.NAME, new AgedBrieItemsRules() },
+                { SulfurasItemRules.NAME, new SulfurasItemRules() },
+                { BackstagePassesItemRules.NAME, new BackstagePassesItemRules() },
+                { ConjuredItemRules.NAME, new ConjuredItemRules() },
 
-                { GENERIC_ITEM_KEY, new GenericItem() }
+                { GENERIC_ITEM_KEY, new GenericItemRules() }
             };
         }
 
