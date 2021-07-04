@@ -1,6 +1,6 @@
 ﻿namespace csharp
 {
-    public class BackstagePasses : IAdvanceableDay
+    public class BackstagePassesItemRules : IAdvanceableDay
     {
         public const string NAME = "Backstage passes to a TAFKAL80ETC concert";
 

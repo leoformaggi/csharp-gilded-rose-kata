@@ -1,6 +1,6 @@
 ﻿namespace csharp
 {
-    public class Conjured : IAdvanceableDay
+    public class ConjuredItemRules : IAdvanceableDay
     {
         public const string NAME = "Conjured Mana Cake";
 

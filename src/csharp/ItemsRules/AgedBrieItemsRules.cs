@@ -1,6 +1,6 @@
 ﻿namespace csharp
 {
-    public class AgedBrie : IAdvanceableDay
+    public class AgedBrieItemsRules : IAdvanceableDay
     {
         public const string NAME = "Aged Brie";
 

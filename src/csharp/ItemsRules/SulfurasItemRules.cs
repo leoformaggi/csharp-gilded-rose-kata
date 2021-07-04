@@ -1,6 +1,6 @@
 ﻿namespace csharp
 {
-    public class Sulfuras : IAdvanceableDay
+    public class SulfurasItemRules : IAdvanceableDay
     {
         public const string NAME = "Sulfuras, Hand of Ragnaros";
 

@@ -50,16 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ItemMapper.cs" />
-    <Compile Include="Items\AgedBrie.cs" />
-    <Compile Include="Items\BackstagePasses.cs" />
-    <Compile Include="Items\Conjured.cs" />
-    <Compile Include="Items\GenericItem.cs" />
+    <Compile Include="ItemsRules\AgedBrieItemsRules.cs" />
+    <Compile Include="ItemsRules\BackstagePassesItemRules.cs" />
+    <Compile Include="ItemsRules\ConjuredItemRules.cs" />
+    <Compile Include="ItemsRules\GenericItemRules.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="IAdvanceableDay.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Items\Sulfuras.cs" />
+    <Compile Include="ItemsRules\SulfurasItemRules.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
